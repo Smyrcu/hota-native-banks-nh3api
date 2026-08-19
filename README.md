@@ -38,3 +38,15 @@ Zbudowaną `native_banks.dll` przemianuj na `setseed.dll` i wrzuć do
 - NH3API (submoduł `third_party/NH3API`): Apache License 2.0 — permisywna,
   nie wymusza upubliczniania kodu korzystającego.
 - Licencja tego pluginu: do ustalenia.
+
+## Kontynuacja / kontekst
+
+Pełny status projektu, kontakty, decyzje i backlog: patrz **`docs/STATUS.md`
+w repo bazowym `Smyrcu/hota-native-banks`** (wariant H3API). Oba repo dzielą
+logikę i offsety; tu różni się tylko biblioteka.
+
+Delta portu względem H3API:
+- include: `nh3api/core/nh3api_std/patcher_x86.hpp` zamiast H3API `patcher_x86.hpp`
+- `WriteLoHook` bierze `const void*` → `reinterpret_cast<const void*>(&OnBankReward)`
+- reszta (main.cpp logika, mapping/config/log) skopiowana 1:1
+- build: ten sam podman + mingw i686 (patrz wyżej); llvm-mingw też działa
