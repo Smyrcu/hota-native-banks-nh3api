@@ -1,4 +1,4 @@
-NATIVE BANK REWARDS - v1.0 - plugin do HotA 1.8.0/1.8.1 / plugin for HotA 1.8.0/1.8.1 / плагин для HotA 1.8.0/1.8.1
+NATIVE BANK REWARDS - v1.0 - plugin do HotA 1.8.0/1.8.1 / plugin for HotA 1.8.0/1.8.1 / плагин для HotA 1.8.0/1.8.1 / плагін для HotA 1.8.0/1.8.1
 
 ================================ POLSKI ================================
 
@@ -6,7 +6,7 @@ INSTALACJA:
   Wrzuc plik setseed.dll do folderu gry:
      ...\_HD3_Data\Common\setseed.dll
 
-JEZYK: plugin sam wykrywa jezyk GRY (PL/EN/RU, inne -> EN).
+JEZYK: plugin sam wykrywa jezyk GRY (PL/EN/RU/UA, inne -> EN).
 
 ONLINE: wszyscy gracze musza miec ten sam plik setseed.dll.
 
@@ -24,7 +24,7 @@ INSTALLATION:
   Copy setseed.dll into the game folder:
      ...\_HD3_Data\Common\setseed.dll
 
-LANGUAGE: the plugin auto-detects the GAME language (PL/EN/RU, others -> EN).
+LANGUAGE: the plugin auto-detects the GAME language (PL/EN/RU/UA, others -> EN).
 
 ONLINE: all players must have the same setseed.dll file.
 
@@ -41,7 +41,7 @@ REMOVAL: delete setseed.dll.
   Скопируйте файл setseed.dll в папку игры:
      ...\_HD3_Data\Common\setseed.dll
 
-ЯЗЫК: плагин сам определяет язык ИГРЫ (PL/EN/RU, другие -> EN).
+ЯЗЫК: плагин сам определяет язык ИГРЫ (PL/EN/RU/UA, другие -> EN).
 
 ОНЛАЙН: у всех игроков должен быть один и тот же файл setseed.dll.
 
@@ -52,3 +52,19 @@ REMOVAL: delete setseed.dll.
   рейтинга и т.п.).
 
 УДАЛЕНИЕ: удалите setseed.dll.
+
+=============================== УКРАЇНСЬКА =============================
+
+ВСТАНОВЛЕННЯ:
+  Скопіюйте setseed.dll до теки гри:
+     ...\_HD3_Data\Common\setseed.dll
+
+МОВА: плагін сам визначає мову ГРИ (PL/EN/RU/UA, інші -> EN).
+
+ОНЛАЙН: усі гравці мусять мати той самий файл setseed.dll.
+
+УВАГА: це ЩЕ НЕ офіційно схвалений мод - питання офіційного схвалення
+  узгоджується з авторами. До того часу рейтингові ігри в HotA Lobby -
+  на ВЛАСНИЙ РИЗИК (десинхронізація, бани, втрата рейтингу тощо).
+
+ВИДАЛЕННЯ: зітріть setseed.dll.

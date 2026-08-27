@@ -61,7 +61,8 @@ bool Config::Load() {
         if      (c0 == 'p' && c1 == 'l') language = 1;
         else if (c0 == 'e' && c1 == 'n') language = 2;
         else if (c0 == 'r' && c1 == 'u') language = 3;
-        else if (c0 >= '1' && c0 <= '3' && !c1) language = c0 - '0';
+        else if (c0 == 'u' && (c1 == 'a' || c1 == 'k')) language = 4;
+        else if (c0 >= '1' && c0 <= '4' && !c1) language = c0 - '0';
         else language = 0;   // auto
     }
     for (int i = 0; i < 12; ++i) {

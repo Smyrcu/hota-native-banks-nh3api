@@ -44,7 +44,7 @@ static uintptr_t g_moduleBase = 0;
 // Popup startowy: MessageBoxW (Unicode — cyrylica niezależna od codepage
 // systemu). Dialog w grze: silnik H3 renderuje ANSI własnym fontem, więc RU
 // podajemy w CP1251 (font wersji RU), a PL bez ogonków (font EN ich nie ma).
-namespace lang { enum { PL = 1, EN = 2, RU = 3 }; }
+namespace lang { enum { PL = 1, EN = 2, RU = 3, UA = 4 }; }
 static int g_lang = 0;   // 0 = jeszcze nie wykryto
 
 static int DetectGameLang() {
@@ -60,7 +60,8 @@ static int DetectGameLang() {
         const char* s = *p;
         if (!s) continue;
         if (!strcmp(s, "Anuluj")) return lang::PL;
-        if (!strncmp(s, "\xCE\xF2\xEC\xE5\xED", 5)) return lang::RU;  // "Отмен" CP1251
+        if (!strncmp(s, "\xCE\xF2\xEC\xE5\xED", 5)) return lang::RU;      // "Отмен" CP1251
+        if (!strncmp(s, "\xD1\xEA\xE0\xF1\xF3\xE2", 6)) return lang::UA;  // "Скасув" CP1251
         if (!strcmp(s, "Cancel")) en = true;
     }
     return en ? lang::EN : 0;
@@ -68,7 +69,7 @@ static int DetectGameLang() {
 
 // 0 = wymuszenie z INI nieaktywne i genrltxt jeszcze nie wczytany.
 static int TryLang() {
-    if (Config::language >= lang::PL && Config::language <= lang::RU)
+    if (Config::language >= lang::PL && Config::language <= lang::UA)
         return Config::language;
     if (!g_lang) g_lang = DetectGameLang();
     return g_lang;
@@ -87,6 +88,11 @@ static const wchar_t* PopupText() {
         L"Существа-награды из банков существ заменяются на\n"
         L"существ вашей родной фракции.\n\n"
         L"Игра МОДИФИЦИРОВАНА. Онлайн: у всех игроков должен быть этот плагин.";
+    case lang::UA: return
+        L"Native Bank Rewards v" NB_VERSION_WSTR L" — плагін активний.\n\n"
+        L"Юніти-нагороди з creature banks замінюються на\n"
+        L"рідних юнітів вашої фракції.\n\n"
+        L"Гру МОДИФІКОВАНО. Онлайн: плагін потрібен усім гравцям.";
     default: return
         L"Native Bank Rewards v" NB_VERSION_WSTR L" — plugin active.\n\n"
         L"Creature rewards from creature banks are replaced with\n"
@@ -99,6 +105,7 @@ static const char* ChooseRewardText() {
     switch (CurLang()) {
     case lang::PL: return "Wybierz nagrode:";
     case lang::RU: return "\xC2\xFB\xE1\xE5\xF0\xE8\xF2\xE5 \xED\xE0\xE3\xF0\xE0\xE4\xF3:";  // CP1251
+    case lang::UA: return "\xC2\xE8\xE1\xE5\xF0\xB3\xF2\xFC \xED\xE0\xE3\xEE\xF0\xEE\xE4\xF3:";  // "Виберіть нагороду:" CP1251
     default:       return "Choose your reward:";
     }
 }

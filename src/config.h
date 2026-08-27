@@ -14,8 +14,8 @@ namespace Config {
     // startupPopup: 1 = pokaż okno „mod aktywny" przy starcie gry, 0 = nie
     extern int  startupPopup;
     // language: język komunikatów (popup + dialog Factory).
-    // 0 = auto (wykrywany z tekstów GRY, fallback EN), 1 = pl, 2 = en, 3 = ru.
-    // INI przyjmuje też stringi: auto/pl/en/ru.
+    // 0 = auto (wykrywany z tekstów GRY, fallback EN), 1 = pl, 2 = en, 3 = ru, 4 = ua.
+    // INI przyjmuje też stringi: auto/pl/en/ru/ua.
     extern int  language;
     // Mnożnik liczby jednostek nagrody per frakcja odbiorcy, w procentach
     // (100 = bez zmian). Indeks = town 0..11. Sekcja INI [CountMultiplier].
