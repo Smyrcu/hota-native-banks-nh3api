@@ -50,3 +50,7 @@ Delta portu względem H3API:
 - `WriteLoHook` bierze `const void*` → `reinterpret_cast<const void*>(&OnBankReward)`
 - reszta (main.cpp logika, mapping/config/log) skopiowana 1:1
 - build: ten sam podman + mingw i686 (patrz wyżej); llvm-mingw też działa
+
+## Weryfikacja
+
+- 2026-08-27, HotA **1.8.1** (GOG build 59987503113364638), v1.0: potwierdzone w grze — hook @0x004abbfa, remapy Stronghold (Wyvern→Cyklop 1:1, Giant→Behemot, 4×Anioł→6×Behemot po AI value), poprawny no-op dla nagrody już native. Log z `Debug=1` bez błędów.
