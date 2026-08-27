@@ -1,0 +1,25 @@
+#include <winver.h>
+#include "version.h"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     NB_VERSION_MAJOR,NB_VERSION_MINOR,0,0
+PRODUCTVERSION  NB_VERSION_MAJOR,NB_VERSION_MINOR,0,0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_DLL
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "ProductName",     "Native Bank Rewards"
+      VALUE "FileDescription", "Native Bank Rewards - plugin HotA (HD Mod)"
+      VALUE "FileVersion",     NB_VERSION_STR
+      VALUE "ProductVersion",  NB_VERSION_STR
+      VALUE "OriginalFilename","setseed.dll"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

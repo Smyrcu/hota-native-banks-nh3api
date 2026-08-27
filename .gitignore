@@ -2,3 +2,5 @@ build/
 build-*/
 *.o
 *.obj
+build/
+release/*.zip

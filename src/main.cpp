@@ -5,6 +5,7 @@
 // tylko patcher (GetPatcher/HookContext/LoHook); struktury HotA są adresowane
 // surowo przez g_moduleBase + rva::*. Tabele: mapping.cpp / ../mapping.md.
 #define WIN32_LEAN_AND_MEAN
+#include "version.h"
 #include <windows.h>
 #include <cstdint>
 #include <cstdio>
@@ -77,17 +78,17 @@ static int CurLang() { int l = TryLang(); return l ? l : lang::EN; }
 static const wchar_t* PopupText() {
     switch (CurLang()) {
     case lang::PL: return
-        L"Native Bank Rewards — plugin aktywny.\n\n"
+        L"Native Bank Rewards v" NB_VERSION_WSTR L" — plugin aktywny.\n\n"
         L"Nagrody jednostkowe z creature banków są podmieniane na\n"
         L"jednostki native Twojej frakcji.\n\n"
         L"Gra ZMODOWANA. Online: wszyscy gracze muszą mieć ten plugin.";
     case lang::RU: return
-        L"Native Bank Rewards — плагин активен.\n\n"
+        L"Native Bank Rewards v" NB_VERSION_WSTR L" — плагин активен.\n\n"
         L"Существа-награды из банков существ заменяются на\n"
         L"существ вашей родной фракции.\n\n"
         L"Игра МОДИФИЦИРОВАНА. Онлайн: у всех игроков должен быть этот плагин.";
     default: return
-        L"Native Bank Rewards — plugin active.\n\n"
+        L"Native Bank Rewards v" NB_VERSION_WSTR L" — plugin active.\n\n"
         L"Creature rewards from creature banks are replaced with\n"
         L"units native to your faction.\n\n"
         L"Game is MODDED. Online: all players must have this plugin.";

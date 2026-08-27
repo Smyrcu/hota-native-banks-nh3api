@@ -7,7 +7,7 @@
 # NH3API wspiera te C++17: MSVC 19.14+, MinGW GCC 9+, llvm-mingw (rekomendowane
 # przez autora). Tu domyslnie GCC mingw jak w repo bazowym.
 cmake_minimum_required(VERSION 3.16)
-project(native_banks_nh3api CXX)
+project(native_banks_nh3api CXX RC)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -17,6 +17,7 @@ add_library(native_banks SHARED
     src/mapping.cpp
     src/config.cpp
     src/log.cpp
+    src/version.rc
 )
 
 target_include_directories(native_banks PRIVATE
@@ -36,5 +37,5 @@ else()
     target_compile_options(native_banks PRIVATE -Wall -Wextra -m32)
     target_link_options(native_banks PRIVATE
         -m32 -static -static-libgcc -static-libstdc++
-        -Wl,--enable-stdcall-fixup)
+        -Wl,--enable-stdcall-fixup -s)
 endif()
